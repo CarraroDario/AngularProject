@@ -12,7 +12,8 @@ export class AppComponent implements OnInit {
 
 
   public selectType: Type = Type.Memory;
-  public selectTypes = Object.values(Type).filter(value => typeof value !== 'number');
+  public selectTypes = <Type[]>Object.values(Type).filter(value => typeof value !== 'number');
+
   public images: Array<ImmaginiDTO> =
     [
       new ImmaginiDTO('/assets/resources/prova2.jpeg', Type.Memory, "Memory"),
@@ -51,5 +52,8 @@ export class ImmaginiDTO {
 }
 
 export enum Type {
-  Molle, Lattice, Memory, Sfoderabili
+  Molle = 0,
+  Lattice,
+  Memory,
+  Sfoderabili
 }
