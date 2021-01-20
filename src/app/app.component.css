@@ -1,0 +1,22 @@
+.Card-style
+{
+    margin: 2%;
+    background-size: cover;
+    align-content: center
+
+}
+
+.filter-style
+{
+    margin: 2%
+}
+
+.image-style
+{
+
+}
+
+.example-large-box {
+    align-items: left;
+    justify-content: left;
+}

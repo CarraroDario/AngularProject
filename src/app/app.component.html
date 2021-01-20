@@ -18,10 +18,42 @@
 </mat-toolbar> -->
 
 
-<mat-tab-group>
+<mat-tab-group dynamicHeight>
 
-  <mat-tab label="first"> First </mat-tab>
-  <mat-tab label="first"> First </mat-tab>
-  
+  <mat-tab label="Products">
+    <div class="example-large-box mat-elevation-z4">
+
+      <mat-form-field class="filter-style">
+        <mat-select (selectionChange)="Refresh()" [(value)]="selectType">
+          <mat-option *ngFor="let type of selectTypes" [value]="type">
+            {{type}}
+          </mat-option>
+        </mat-select>
+
+      </mat-form-field>
+
+      <mat-grid-list cols="4">
+        <mat-grid-tile class="radio-button" *ngFor="let image of imagesFiltered">
+          <mat-card class="Card-style">
+            <mat-card-title>
+              {{image.header}}
+             </mat-card-title>
+            <img mat-card-image class="image-style" src={{image.imgsrc}}>
+            <mat-card-content>
+              <p>
+                Prova
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+
+    </div>
+  </mat-tab>
+  <mat-tab label="Contacts">
+
+
+  </mat-tab>
+
 </mat-tab-group>
-  
